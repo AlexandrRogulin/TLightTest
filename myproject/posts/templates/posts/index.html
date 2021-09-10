@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Search Test{% endblock %}
+{% block header %}Последние обновления на сайте{% endblock %}
+{% block content %}
+
+<form action="{% url 'index' %}" method="пуе" class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Ведите слово и нажмите Enter" name='search'>
+  <button type="submit" class="btn btn-outline-primary">Поиск</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            {% comment %} <th>id</th> {% endcomment %}
+            <th>Имя пользователя</th>
+            <th>Тема поста</th>
+            <th>Текст поста</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for item in posts %}
+        <tr>
+            {% comment %} <td>{{ item.id }}</td> {% endcomment %}
+            <td>{{ item.author }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.body }}</td>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
+
+
