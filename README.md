@@ -1,6 +1,13 @@
 # TLightTest
 Решение ТЗ для https://cpa.tl/
 
+## Задание
+1.	Автоматизировать загрузку в локальную БД данных пользователей и постов.
+2.	Реализовать отображение (через Web) страницы с таблицей.
+3.	Добавить форму с одним полем для фильтрации по любому из трех полей 
+
+
+## Подготовка к работе
 Для запуска проекта на своем компьютере скопируйте данный проект на ПК в нужную директоию.
 
 Затем установите виртуальное окружение.
@@ -21,11 +28,16 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
 ```
-Заполните базу данных информацией из файлов <b>posts_customuser.json</b> и <b>posts_post.json</b>
+## Parcer
+В папке спроектом есть файл <b>parcer.py</b>, расположенный по адресу: <b>myproject/posts/managment/commands/parcer.py</b>. При его запуске начинается сбор информации о пользователях и постах, котоыре будут сохранены в файлах <b>posts_customuser.json</b> и <b>posts_post.json</b>, котоыре появялся в дирректории проекта.
+
+Для заполнения базы данных информацией из файлов <b>posts_customuser.json</b> и <b>posts_post.json</b> необходимо выполнить команды:
 ```
 ./manage.py loaddata posts_customuser.json
 ./manage.py loaddata posts_post.json
 ```
+При успешной операции в терминале будут такие сообщения:
+<a target="blank" href="https://prnt.sc/1ryrelh"><img src="https://prnt.sc/1ryrelh" /></a>
 Запустите сервер командой
 ```
 python manage.py runserver
@@ -40,3 +52,18 @@ python manage.py runserver
 Результаты поиска будут отображаться в новой таблице.
 
 <a target="_blank" href="http://g.recordit.co/zU8HsOzRvr.gif"><img src="preview.gif" /></a>
+
+## Импорт готовой БД
+
+В папке проекта есть файл <b>db.json</b> с уже заполенной базой данных. Для ее импорта воспользуйтесь командой:
+```
+./manage.py loaddata db.json
+```
+
+### Технологии:
+•	Python = 3.7
+•	Django 1.11
+•	SQLite (для хранения данных)
+•	python-requests (для получения тест. данных)
+•	Bootstrap >= 3
+•	CSS/HTML
