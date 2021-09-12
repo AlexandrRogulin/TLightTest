@@ -32,7 +32,10 @@ with open('myproject/posts_post.json', 'w', encoding='utf-8') as outfile:
     json.dump(posts_post, outfile)
 
 
-
+'''
+Парсинг информации о пользователях с сайта 
+http://jsonplaceholder.typicode.com/users
+'''
 response_users = requests.get("http://jsonplaceholder.typicode.com/users")
 users = json.loads(response_users.text)
 for item in users:

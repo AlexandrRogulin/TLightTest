@@ -1,9 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth import models
-# from django.contrib.auth.base_user import AbstractBaseUser
-from .models import  Company, CustomUser, Geolocation, Post, Address
-from django.contrib.auth.models import AbstractBaseUser
-
+from .models import Company, CustomUser, Geolocation, Post, Address
 
 
 class CustomAdmin(admin.ModelAdmin):
@@ -22,15 +19,11 @@ class GeolocationAdmin(admin.ModelAdmin):
 
 
 class PostAdmin(admin.ModelAdmin):
-    # Перечисляем поля, которые должны отображаться в админке
-    list_display = ('id', 'author', 'title', 'body') 
-    # Добавляем интерфейс для поиска по тексту постов
+    list_display = ('id', 'author', 'title', 'body')
     search_fields = ('body', 'title', 'author')
     empty_value_display = '-пусто-'
 
 
-# admin.site.register(User, UserAdmin)
-# admin.site.register(Address, AddressAdmin)
 admin.site.register(Post, PostAdmin)
 admin.site.register(CustomUser, CustomAdmin)
 admin.site.register(Address, AddressAdmin)
