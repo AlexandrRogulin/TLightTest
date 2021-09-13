@@ -29,7 +29,7 @@ python manage.py migrate
 python manage.py createsuperuser
 ```
 ## Parcer
-В папке спроектом есть файл <b>parcer.py</b>, расположенный по адресу: <b>myproject/posts/managment/commands/parcer.py</b>. При его запуске начинается сбор информации о пользователях и постах, котоыре будут сохранены в файлах <b>posts_customuser.json</b> и <b>posts_post.json</b>, котоыре появялся в дирректории проекта.
+В папке спроектом есть файл <b>parser.py</b>, расположенный по адресу: <b>myproject/posts/managment/commands/parcer.py</b>. При его запуске начинается сбор информации о пользователях и постах, которые будут сохранены в файлах <b>posts_customuser.json</b> и <b>posts_post.json</b>, которые появялся в дирректории проекта.
 
 Для заполнения базы данных информацией из файлов <b>posts_customuser.json</b> и <b>posts_post.json</b> необходимо выполнить команды:
 ```

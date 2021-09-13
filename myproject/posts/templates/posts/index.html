@@ -3,7 +3,7 @@
 {% block header %}Последние обновления на сайте{% endblock %}
 {% block content %}
 
-<form action="{% url 'index' %}" method="пуе" class="input-group">
+<form action="{% url 'index' %}" method="get" class="input-group">
   <input type="search" class="form-control rounded" placeholder="Ведите слово и нажмите Enter" name='search'>
   <button type="submit" class="btn btn-outline-primary">Поиск</button>
 </form>
